@@ -1,0 +1,17 @@
+# Github Actions CI/CD
+---
+name: Checks # Workflow 이름
+
+on: [push] # git push 이벤트 활성화 -> 레포지토리에 push를 했을 때 활성화
+
+jobs:
+  test-lint:
+    name: Test and Lint
+    runs-on: ubuntu-20.04 # 작업 환경
+    steps: # 작업 단계
+      - name: Checkout # 깃헙 레포에 있는 코드를 작업 환경으로 가져오는 역할
+        uses: actions/checkout@v2
+      - name: Test # 테스트 코드 실행
+        run: docker-compose run --rm app sh -c "python manage.py test"
+      - name: Lint # pep8 파이썬 코드 스타일 가이드 준수 여부 검사
+        run: docker-compose run --rm app sh -c "flake8"
