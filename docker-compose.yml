@@ -1,0 +1,18 @@
+# docker-compose: 도커 컨테이너 관리
+# docker-compose.yml: 개발용으로 사용
+# docker-compose-deploy.yml: 배포용으로 사용
+
+version: "3.11"
+
+# docker-compose: 프론트엔드, 백엔드, DB, NginX
+services:
+  app: # Django
+    build:
+      context: .
+      args:
+        - DEV=true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: sh -c 'python manage.py runserver 0.0.0.0:8000'
