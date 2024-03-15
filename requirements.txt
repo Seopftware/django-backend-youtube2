@@ -3,3 +3,6 @@ django>=5.0.3,<6.0.0 # 5.0.1 이상 이거나 6.0.0 미만의 버전을 설치�
 
 # DRF(Django Rest Framework)
 djangorestframework>=3.14.0,<4.0.0
+
+# Psycopg2
+psycopg2-binary>=2.9.9,<3.0.0

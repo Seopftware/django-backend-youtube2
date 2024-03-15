@@ -21,3 +21,5 @@
 - requirments.txt => 실제 배포할 때 사용
 - requirments.dev.txt => 개발하고 연습할 때 사용 (파이썬 패키지 관리) DRF 버전업 해볼까?
 - 실전: 패키지 의존성 관리 => 버전관리, 패키지들 간의 관계 관리
+
+- docker-compose run --rm sh -c 'python manage.py runserver'
