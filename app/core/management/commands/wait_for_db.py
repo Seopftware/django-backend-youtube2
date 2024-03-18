@@ -5,7 +5,7 @@ import time
 # Operation Error & Psycopg2 Operation Error
 
 from django.db.utils import OperationalError
-from psycopg2 import OperationalError as Psycopg2OpError
+from psycopg2 import OperationalError as Psycopg2OPsycopgpError
 
 
 class Command(BaseCommand):
