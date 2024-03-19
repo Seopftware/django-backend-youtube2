@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+# - title
+# - description
+# - link
+# - category
+# - views_count
+# - thumbnail
+# - User: FK

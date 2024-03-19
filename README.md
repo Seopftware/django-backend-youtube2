@@ -51,7 +51,7 @@ Obstacles are what you see when you take your eyes off your vision
 
 ### 1. 모델(테이블) 구조
 
-(1) User
+(1) User => O
 
 - email
 - password
@@ -60,7 +60,7 @@ Obstacles are what you see when you take your eyes off your vision
 <!-- - 구독자? 내가 구독한 사람도 있고, 나를 구독한 사람.
 - 알림? -->
 
-(2) Video
+(2) Video => -ing
 
 - title
 - description
@@ -92,7 +92,7 @@ Obstacles are what you see when you take your eyes off your vision
 - User: FK => subscriber (내가 구독한 사람)
 - User: FK => subscribed_to (나를 구독한 사람)
 
-(5) Common
+(5) Common =>
 
 - created_at
 - updated_at
@@ -110,3 +110,9 @@ Obstacles are what you see when you take your eyes off your vision
 ### Custom User Model Create
 
 - TDD => 개발 및 디버깅 시간을 엄청나게 줄일 수 있습니다. PDB(Python Debugger)
+
+# DRF 세팅
+
+- DjangoRestframework
+- drf-spectacular / swagguer-ui, redoc / requirements.txt 추가
+- docker-compose build

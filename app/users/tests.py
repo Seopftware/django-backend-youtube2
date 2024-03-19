@@ -36,3 +36,7 @@ class UserTestCase(TestCase):
         # 슈퍼유저
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+# 내일 예고
+# DRF설치 & REST API
+# - 유튜브 메인화면 API
