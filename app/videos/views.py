@@ -12,9 +12,8 @@ from rest_framework import status
 # [GET]: 전체 비디오 목록 조회
 # [POST]: 새로운 비디오 생성
 # [PUT], [DELETE]: X
-
 class VideoList(APIView):
-    def get(self):
+    def get(self, request):
         videos = Video.objects.all() # QuerySet[Video, Video, Video, Video, Video ....]
         # 직렬화 (Object -> Json) - Serializer(내가 원하는 데이터만 내려주는 기능)
 

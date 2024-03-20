@@ -5,6 +5,7 @@ from .models import Video
 from django.urls import reverse
 from rest_framework import status
 from django.core.files.uploadedfile import SimpleUploadedFile
+import pdb # python debugger
 
 class VideoAPITestCase(APITestCase):
     # 테스트 코드가 실행되기 전 동작하는 함수
@@ -51,6 +52,8 @@ class VideoAPITestCase(APITestCase):
         }
 
         res = self.client.post(url, data)
+
+        pdb.set_trace()
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         self.assertEqual(res.data['title'], 'test video2')
