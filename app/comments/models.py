@@ -18,6 +18,7 @@ class Comment(CommonModel):
     # - Video => Comment, Comment, Comment => O
     # - Comment => Video(침착맨), Video(이지금), Video(잇섭) => X
 
+    # Video -> video (migration->migrate)
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
 
     # 법(law) -> 채팅 데이터 3개월

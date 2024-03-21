@@ -116,3 +116,15 @@ Obstacles are what you see when you take your eyes off your vision
 - DjangoRestframework
 - drf-spectacular / swagguer-ui, redoc / requirements.txt 추가
 - docker-compose build
+
+# 슈퍼유저 만드는 방법
+
+docker-compose run --rm app sh -c 'python manage.py createsuperuser'
+
+# 서버실행
+
+docker-compose up
+
+# 서버종료
+
+docker-compose down

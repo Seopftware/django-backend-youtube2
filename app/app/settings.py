@@ -44,6 +44,7 @@ CUSTOM_USER_APPS = [
     'users.apps.UsersConfig', # Config: label 변경할 일이 많다.
     'videos.apps.VideosConfig',
     'comments.apps.CommentsConfig',
+    'subscriptions.apps.SubscriptionsConfig',
     'rest_framework',
     'drf_spectacular'
 ]
