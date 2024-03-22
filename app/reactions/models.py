@@ -31,6 +31,7 @@ class Reaction(CommonModel):
         (NO_REACTION, 'No Reaction')
     )
 
+    # column: reactions -> migration -> reaction -> migration
     reaction = models.IntegerField(
         choices=REACTON_CHOICES,
         default=NO_REACTION
@@ -45,6 +46,12 @@ class Reaction(CommonModel):
         
         return reactions
     
+    # 모르는 상태로 프로젝트를 한~참 진행해서 복잡해진후에 발견하면. 어찌하는지.
+    # - 테이블많고, 컬럼많고. 데이터 많이 쌓여있고.
+    # - 컬럼추가해서 기존컬럼 데이터 살리면서 새로운 컬럼으로 옮길 수도 있고.
+    # 그 변수명에 연결된 코드들이 많을 때도 있고 다양한 일이 생길것 같아서요.
+    # Postmortem(회고), Code Refactoring, Code Review
+
 
     # BE_02_신현민질문이 있는데요. 
     # 싫어요 같은경우에 좋아요를 줄이는것도 맞지만 좋아요 보다 싫어요가 많은 경우도 있을텐데요. 

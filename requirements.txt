@@ -9,3 +9,6 @@ psycopg2-binary>=2.9.9,<3.0.0
 
 # DRF-Spectacular
 drf-spectacular>=0.27.1,<0.28.0
+
+# Help Django Chatting Socket Connection
+channels>=4.0.0,<4.0.1

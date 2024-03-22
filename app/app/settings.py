@@ -45,11 +45,31 @@ CUSTOM_USER_APPS = [
     'videos.apps.VideosConfig',
     'comments.apps.CommentsConfig',
     'subscriptions.apps.SubscriptionsConfig',
+    'reactions.apps.ReactionsConfig',
     'rest_framework',
-    'drf_spectacular'
+    'drf_spectacular',
+    'channels',
+    'chat.apps.ChatConfig'
 ]
 
 INSTALLED_APPS = CUSTOM_USER_APPS + DJANGO_SYSTEM_APPS
+
+# Channels를 사용하기 위한 설정
+ASGI_APPLICATION = 'app.routes.application' # Socket (비동기 처리) + HTTP(동기)
+# => FAST API (비동기) + (동기)
+
+WSGI_APPLICATION = 'app.wsgi.application' # HTTP Base - REST API (동기 처리)
+
+# 동기와 비동기
+# 스타벅스에 들어갔어요.
+# 내 앞에 사람이 녹차프라프치노휘핑크림7번시럽7번+옵션+벤티(만드는데 오래걸리겠죠.)
+# 직원이 1명이야 (동기) -> 녹차프라프치노휘핑크림7번시럽7번 만들어야 -> 그 다음 내차례 (동기)
+# 직원이 2명 이상 (비동기) -> 아아주세요 -> 아아주세요 -> 따듯한게 나와.
+
+# Worker => FAST API
+# (화)
+# (수) => FAST API (매력에 빠지게 된다.) => 쉬워서.
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,8 +98,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database
