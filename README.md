@@ -128,3 +128,16 @@ docker-compose up
 # 서버종료
 
 docker-compose down
+
+### Q&A
+
+BE*02*이재훈
+
+- 유트브 보면 댓글에 댓글 있는데 대댓글은 어떻게 구현하나요? user:comment 관계는 어떻게 드가나영
+  - Comment와 Comment와의 관계를 보면 됩니다.
+  - Comment(Parent, Root)
+    - Comment(Child, 1)
+    - Comment(Child, 1)
+    - Comment(Child, 1)
+    - Comment(Child, 1)
+    - Comment(Child, 1)
