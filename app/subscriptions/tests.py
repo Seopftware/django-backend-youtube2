@@ -24,12 +24,6 @@ class SubscriptionTestCase(APITestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(len(res.data), 1)
         self.assertEqual(res.data[0]['subscribed_to'], self.user2.id)
-
-        # XX님이 ChatGPT보다 더 잘할 수 있는 것이 뭐에요?
-        # - 
-        # 앞으로 개발자는 다 GPT가 대체할 겁니다.
-        
-
         
     # 구독 버튼 테스트
     # [POST] api/v1/sub

@@ -12,6 +12,7 @@ class VideoListSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+from reactions.models import Reaction
 class VideoDetailSerializer(serializers.ModelSerializer):
 
     # Video:User => Video(FK) -> User
@@ -26,3 +27,6 @@ class VideoDetailSerializer(serializers.ModelSerializer):
         model = Video
         fields = "__all__"
         # depth = 1
+
+    def get_reactions(self, video):
+        return Reaction.get_video_reaction(video) # 비디오 줄게 -> 리액션 내놔.
