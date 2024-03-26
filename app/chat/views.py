@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.views import APIView
+
 
 # RESTFUL한 API다.
 
@@ -40,10 +42,12 @@ class ChatRoomList(APIView):
 # api/v1/chat/{room_id}/messages
 ### [GET]: 전체 채팅 내역 조회
 ### [POST]: 채팅 메세지 생성
-from rest_framework.views import APIView
 from .models import ChatMessage
 from django.shortcuts import get_object_or_404
 from .serializers import ChatMessageSerializer
+from django.shortcuts import render
+def chat_html(request):
+    return render(request, 'index.html') # html 뿌려주는 역활
 
 class ChatMessageList(APIView):
     def get(self, request, room_id):
@@ -64,3 +68,6 @@ class ChatMessageList(APIView):
         serializer.save(room=chatroom, sender=request.user)
 
         return Response(serializer.data, 201)
+    
+# docker-compose run --rm app sh -c 'python manage.py makemigarations'
+# docker-compose run --rm app sh -c 'python manage.py migrate'  

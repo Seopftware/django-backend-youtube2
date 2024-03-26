@@ -17,6 +17,7 @@ DJANGO_SYSTEM_APPS = [
 ]
  
 CUSTOM_USER_APPS = [
+    'daphne',
     'users.apps.UsersConfig', # Config: label 변경할 일이 많다.
     'videos.apps.VideosConfig',
     'comments.apps.CommentsConfig',
@@ -153,4 +154,10 @@ AUTH_USER_MODEL = 'users.User' # users 폴더의 User모델
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND" : "channels.layers.InMemoryChannelLayer"
+    }
 }
