@@ -20,7 +20,6 @@ DJANGO_SYSTEM_APPS = [
 ]
  
 CUSTOM_USER_APPS = [
-    'daphne',
     'users.apps.UsersConfig', # Config: label 변경할 일이 많다.
     'videos.apps.VideosConfig',
     'comments.apps.CommentsConfig',
@@ -29,7 +28,8 @@ CUSTOM_USER_APPS = [
     'rest_framework',
     'drf_spectacular',
     'channels',
-    'chat.apps.ChatConfig'
+    'chat.apps.ChatConfig',
+    'daphne',
 ]
 
 INSTALLED_APPS = CUSTOM_USER_APPS + DJANGO_SYSTEM_APPS
