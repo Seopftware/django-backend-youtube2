@@ -15,7 +15,6 @@ channels>=4.0.0,<4.0.1
 daphne>=4.1.0,<4.2.0
 
 # uWSGI
-# uWSGI>=2.0.24,<2.1.0 # GCC -> C++
-
+uwsgi>=2.0.24,<2.1.0 # GCC -> C++
 
 # docker-compose build

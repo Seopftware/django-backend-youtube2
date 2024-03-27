@@ -1,10 +1,13 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-u#8@1rxwpvr(ci4d-zzvgas@w!=d2+eu_ihc+!$zv0!qyp(y)k'
-DEBUG = True
 
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ.get('SECRET_KEY', 'password123')
+DEBUG = bool(int(os.environ.get('DEBUG', 0))) # 0: False
+ALLOWED_HOSTS = ['*'] # ec2-123-123-123
+
+# EC2: Git, Docker Install -> docker-compose-deploy up
 
 DJANGO_SYSTEM_APPS = [
     'django.contrib.admin',
@@ -35,12 +38,11 @@ INSTALLED_APPS = CUSTOM_USER_APPS + DJANGO_SYSTEM_APPS
 ASGI_APPLICATION = 'app.route.application' # Socket (비동기 처리) + HTTP(동기)
 # => FAST API (비동기) + (동기)
 
-# 웹소켓 채팅 구현했습니다. => 오 대단한데요. 웹소켓의 원리가 뭔가요?(질문의도) - 면접관 본인이 알고 있어서.
+# 웹소켓 채팅 구현했습니다. => 오 대단한데요. 웹소켓의 원리가 뭔가요? (질문의도) - 면접관 본인이 알고 있어서.
 # HTTP(단방향) 와 웹소켓(양방향)의 차이점은 뭐죠?
 # HTTP - http://
 # SOCKET - ws://, Hand Shake 양방향 통신이 가능해진다, Low Overhead, Frame(웹소켓에서 데이터를 나누는 단위)
 # STREAMING - 영상 파일은 어떻게 보낼꺼냐? TCP/UDP, 3 ways hand shake
-
 WSGI_APPLICATION = 'app.wsgi.application' # HTTP Base - REST API (동기 처리)
 
 # 동기와 비동기
