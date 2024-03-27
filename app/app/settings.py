@@ -163,4 +163,8 @@ CHANNEL_LAYERS = {
     }
 }
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/static'
+MEDIA_URL = '/static/media'
+
+MEDIA_ROOT = '/vol/web/media'
+STATIC_ROOT = '/vol/web/static'
