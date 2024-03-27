@@ -1,5 +1,5 @@
-FROM nginx:latest
-LABEL maintainer="input-your-name"
+FROM nginxinc/nginx-unprivileged:1-alpine
+LABEL maintainer="seopftware"
 
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
@@ -12,8 +12,12 @@ ENV APP_PORT=9000
 USER root
 
 RUN mkdir -p /vol/static && \
-    chmod 755 /vol/static && \
-    touch /etc/nginx/conf.d/default.conf && \
+    chmod 755 /vol/static
+
+RUN mkdir -p /var/cache/nginx/client_temp && \
+    chown -R nginx:nginx /var/cache/nginx
+
+RUN touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
 
