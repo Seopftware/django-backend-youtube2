@@ -34,7 +34,7 @@ services:
     depends_on:
       - app
     ports:
-      # - 80:8000 # ec2-123-123-123.com/api/v1 (from:to)
+      - 80:8000 # ec2-123-123-123.com/api/v1 (from:to)
       # - 8000:8000 #로컬에서 테스트시
     volumes:
       - static-data:/vol/static
